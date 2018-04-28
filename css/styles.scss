@@ -1,3 +1,5 @@
+@import "mixins";
+
 .sidemenu {
   background-color: #354052;
   height: 56rem;
@@ -10,21 +12,6 @@
   margin-top: 3em;
   margin-bottom: 3em;
   padding-left: 0;
-
-  li {
-    margin-top: 1em;
-  }
-
-  a {
-    padding: 0.8em;
-    margin-top: 1em;
-    text-align: center;
-  }
-}
-
-a {
-  color: white;
-  font-size: 0.8rem;
 }
 
 .logo {
@@ -47,78 +34,18 @@ a {
   cursor: pointer;
   outline: none;
   text-align: left;
-}
 
-.button:focus {
-  background-color: transparent;
-  padding-left: 30px;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  height: 45px;
-  width: 170px;
-  cursor: pointer;
-  outline: none;
-  text-align: left;
-
-  .light-blue {
-    color: #A8D8F5;
+  &:hover {
+    @include button-colors;
+    @extend .button;
+    background-color: transparentize(grey,.8);
+    color: white;
   }
 
-  .orange {
-    color: #FF8660;
-  }
-
-  .light-green {
-    color: #A7F7CE;
-  }
-
-  .yellow {
-    color: #FFB760;
-  }
-
-  .green {
-    color: #00DE6D;
-  }
-
-  .blue {
-    color: #61BEF5;
-  }
-}
-
-.button:hover {
-  background-color: transparentize(grey,.8);
-  padding-left: 30px;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  height: 45px;
-  width: 170px;
-  cursor: pointer;
-  outline: none;
-  text-align: left;
-
-  .light-blue {
-    color: #A8D8F5;
-  }
-
-  .orange {
-    color: #FF8660;
-  }
-
-  .light-green {
-    color: #A7F7CE;
-  }
-
-  .yellow {
-    color: #FFB760;
-  }
-
-  .green {
-    color: #00DE6D;
-  }
-
-  .blue {
-    color: #61BEF5;
+  &:focus {
+    @include button-colors;
+    @extend .button;
+    background-color: transparent;
+    color: white;
   }
 }

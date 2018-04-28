@@ -1,0 +1,25 @@
+@mixin button-colors() {
+  .light-blue {
+    color: #A8D8F5;
+  }
+
+  .orange {
+    color: #FF8660;
+  }
+
+  .light-green {
+    color: #A7F7CE;
+  }
+
+  .yellow {
+    color: #FFB760;
+  }
+
+  .green {
+    color: #00DE6D;
+  }
+
+  .blue {
+    color: #61BEF5;
+  }
+}
