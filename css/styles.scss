@@ -1,8 +1,14 @@
 @import "mixins";
+$grey-font: transparentize(lightgrey,.6);
+
+.shnk {
+  height: 7px;
+  width: 7px;
+}
 
 .sidemenu {
   background-color: #354052;
-  height: 56rem;
+  height: 66rem;
   max-width: 200px;
   min-width: 184px;
 }
@@ -26,11 +32,11 @@
 .button {
   background-color: transparent;
   padding-left: 30px;
-  color: transparentize(lightgrey,.6);
+  color: $grey-font;
   border: none;
   border-radius: 30px;
   height: 45px;
-  width: 170px;
+  width: 95%;
   cursor: pointer;
   outline: none;
   text-align: left;
@@ -47,5 +53,102 @@
     @extend .button;
     background-color: transparent;
     color: white;
+  }
+}
+
+.no-border {
+  border: none;
+  border-color: transparent;
+}
+//top nav
+
+.top-input {
+  margin-left: 30px;
+  padding-left: 0;
+  font-style: italic;
+
+  &:active,
+  &:focus {
+    font-style: normal;
+  }
+}
+
+.grey {
+  color: #BEBEBE;
+}
+
+.maindash {
+  background-color: whitesmoke;
+  height: 63rem;
+  padding-right: 30px;
+}
+
+.submit-heading {
+  padding-top: 1em;
+}
+
+.user-tools {
+  float: right;
+}
+
+.search {
+  padding-right: 5px;
+}
+
+.dot {
+  color: #26dd80;
+}
+
+.bar {
+  padding-top: 12px;
+}
+
+.profilepic {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.nohover {
+  background-color: transparent !important;
+  outline-color: none !important;
+}
+
+.profilebutton {
+  padding-top: 0;
+  font-size: 12px;
+  font-weight: bold;
+
+  &:active,
+  &:focus,
+  &:hover {
+    @extend .nohover;
+  }
+}
+
+.submit {
+  padding-top: 2rem;
+  padding-left: 2rem;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.toggle {
+  float: right;
+
+  button {
+    font-size: 12px;
+    font-weight: bold;
+    color: grey;
+    background-color: transparentize(grey,.9);
+    padding: 10px 40px;
+
+    &:active,
+    &:focus {
+      background-color: #4ec2dd;
+      color: white;
+      outline: none;
+    }
   }
 }
