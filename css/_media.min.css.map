@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "_media.min.css",
+	"sources": [
+		"_media.scss"
+	],
+	"sourcesContent": [
+		"@media(max-width: 900px) {\r\n  .sidemenu {\r\n    display: none;\r\n  }\r\n}\r\n@media (min-width: 1200px) {\r\n  .container {\r\n    max-width: 1385px !important;\r\n  }\r\n}"
+	],
+	"names": [],
+	"mappings": "AAAA,MAAM,EAAC,SAAS,EAAE,KAAK,8DACrB,AAAA,SAAS,AAAC,CACR,OAAO,CAAE,IAAI,CACd,CAEH,MAAM,EAAE,SAAS,EAAE,MAAM,8DACvB,AAAA,UAAU,AAAC,CACT,SAAS,CAAE,iBAAiB,CAC7B"
+}

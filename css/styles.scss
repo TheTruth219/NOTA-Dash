@@ -1,5 +1,15 @@
 @import "mixins";
+@import "media";
 $grey-font: transparentize(lightgrey,.6);
+$menufont: silver;
+$main-background: white;
+$buttonblue: #4ec2ee;
+$green: #26dd80;
+$shadow: 1px 1px 0.5px $grey-font;
+
+.fa-xs {
+  font-size: 0.55em !important;
+}
 
 .shnk {
   height: 7px;
@@ -9,7 +19,6 @@ $grey-font: transparentize(lightgrey,.6);
 .sidemenu {
   background-color: #354052;
   height: 66rem;
-  max-width: 200px;
   min-width: 184px;
 }
 
@@ -96,7 +105,7 @@ $grey-font: transparentize(lightgrey,.6);
 }
 
 .dot {
-  color: #26dd80;
+  color: $green;
 }
 
 .bar {
@@ -128,10 +137,13 @@ $grey-font: transparentize(lightgrey,.6);
 }
 
 .submit {
-  padding-top: 2rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
   padding-left: 2rem;
+  padding-bottom: 1rem;
   font-size: 24px;
   font-weight: bold;
+  display: block;
 }
 
 .toggle {
@@ -146,9 +158,165 @@ $grey-font: transparentize(lightgrey,.6);
 
     &:active,
     &:focus {
-      background-color: #4ec2dd;
+      background-color: $buttonblue;
       color: white;
       outline: none;
     }
+  }
+}
+//Dashboard Layout
+
+.dot2 {
+  height: 40px;
+  width: 40px;
+  border-radius: 60%;
+  display: inline-block;
+}
+
+.loandot {
+  @extend .dot2;
+  background-color: transparentize($buttonblue,.8);
+  position: absolute;
+  right: -51%;
+  top: -10%;
+}
+
+.principaldot {
+  @extend .dot2;
+  background-color: transparentize($green,.8);
+  float: right;
+  position: absolute;
+  right: 34%;
+  top: 30%;
+}
+
+.dash-container {
+  margin-top: 3em;
+  margin-left: 4%;
+  margin-right: 1%;
+}
+
+.dashcolor {
+  background-color: $main-background;
+}
+
+.dash-1 {
+  height: 21em;
+  flex-direction: row;
+  box-shadow: $shadow;
+
+  hr {
+    border: 0.5px solid rgba(0,0,0,0.1);
+  }
+}
+
+.loan {
+  height: 50%;
+
+  h5 {
+    margin-top: 3em;
+    margin-left: 2em;
+    font-size: 0.75em;
+    font-weight: bold;
+  }
+
+  h3 {
+    margin-left: 0.9em;
+    display: inline-block;
+    font-size: 1.5em;
+  }
+}
+
+#bkrndemphasis {
+  background-color: lighten($buttonblue, .3);
+  border: 1px solid $buttonblue;
+  margin-left: 1.5em;
+}
+
+h5 {
+  color: $menufont;
+}
+
+.emphasis {
+  color: lighten($buttonblue, .3);
+}
+
+.dropdown {
+  float: right;
+
+  button {
+    color: $buttonblue;
+    border: none;
+    font-size: 0.80em;
+    font-weight: bold;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: transparent !important;
+      color: $buttonblue !important;
+    }
+  }
+}
+
+.rw1 {
+  margin-top: 5em;
+  margin-left: 1.5em;
+  padding-top: 3em;
+  font-size: 0.75em;
+  font-weight: bold;
+  color: $menufont;
+
+  span {
+    float: right;
+    font-size: 1.2em;
+    color: black;
+  }
+}
+
+h6 {
+  margin-top: 1em;
+  margin-left: 1.5em;
+  font-size: 0.75em;
+  font-weight: bold;
+  color: $menufont;
+
+  span {
+    float: right;
+    font-size: 1.2em;
+    color: black;
+  }
+}
+//Second Dash Row
+
+.dash-2 {
+  margin-top: 1em;
+
+  div {
+    box-sizing: border-box;
+    height: 9em;
+    box-shadow: $shadow;
+  }
+}
+
+.rw2 {
+  color: black;
+  font-weight: bold;
+  margin-left: 0.9em;
+  padding-top: 0.75em;
+}
+
+.pad2 {
+  padding-top: 2em;
+}
+//Third Dash row
+
+.dash-3 {
+  margin-top: 1em;
+
+  div {
+    box-sizing: border-box;
+    height: 16em;
+    box-shadow: $shadow;
   }
 }

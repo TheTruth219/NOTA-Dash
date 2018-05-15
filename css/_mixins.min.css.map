@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "_mixins.min.css",
+	"sources": [
+		"_mixins.scss"
+	],
+	"sourcesContent": [
+		"@mixin button-colors() {\r\n  .light-blue {\r\n    color: #A8D8F5;\r\n  }\r\n\r\n  .orange {\r\n    color: #FF8660;\r\n  }\r\n\r\n  .light-green {\r\n    color: #A7F7CE;\r\n  }\r\n\r\n  .yellow {\r\n    color: #FFB760;\r\n  }\r\n\r\n  .green {\r\n    color: #00DE6D;\r\n  }\r\n\r\n  .blue {\r\n    color: #61BEF5;\r\n  }\r\n}"
+	],
+	"names": [],
+	"mappings": ""
+}
