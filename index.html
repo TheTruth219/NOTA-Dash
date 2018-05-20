@@ -8,13 +8,15 @@
 
   <title>NOTA Network</title>
 
-  <link rel="stylesheet" href="css\tether.min.css"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous"/>
-  <link rel="stylesheet" href="css\styles.min.css"/>
-  <link rel="icon" type="image/png" href="img\Notafav.png" >
+  <link rel="stylesheet" href="css\tether.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css\styles.min.css" />
+  <link rel="icon" type="image/png" href="img\Notafav.png">
 
   <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js\date.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
+
 
 
   <!--[if lt IE 9]>
@@ -22,8 +24,8 @@
 <![endif]-->
 </head>
 
-<body>
-  <div class="container-fluid zero">
+<body id="bootstrapoverrides">
+  <div class="container-fluid zero mn-c">
     <div class="col-lg-2 sidemenu">
       <nav>
         <img class="logo" src="img\Nota-w.png" alt="Freetech logo" height="40" width="110">
@@ -38,7 +40,7 @@
         </ul>
       </nav>
     </div>
-    <div class="col-lg-10 zero">
+    <div class="col-lg-12 zero">
       <nav class="navbar navbar-light bg-light ">
         <button class="navbar-brand bar no-border nohover"><i class="fas fa-cog  grey" data-fa-transform="right-15"></i></button>
         <form class="form-inline bar">
@@ -53,96 +55,97 @@
       </nav>
       <div class="maindash">
         <h3 class="submit">Submit a Loan Request <div class="btn-group toggle" role="group" aria-label="Submit Request">
-          <button type="button" autofocus class="btn  no-border active" data-toggle="button" aria-pressed="true">Fiat Loan</button>
-          <button type="button" class="btn  no-border ">Crypto Loan</button>
+          <button type="button" autofocus class="btn  no-border active" data-toggle="button" aria-pressed="true"><i class="far fa-money-bill-alt fa-lg"></i> Fiat Loan</button>
+          <button type="button" class="btn  no-border "><i class="fab fa-btc fa-lg"></i> Crypto Loan</button>
           </div>
         </h3>
 
         <div class="dash-container ">
           <div class="container">
-              <div class="row dash-1 dashcolor">
-                  <div class="col-sm-6 loan">
-                    <h5 class="emphasis">Loan Amount</h5>
-                    <h3> $70,000</h3>
-                    <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USD</button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">USD</a>
-                        <a class="dropdown-item" href="#">EUR</a>
-                        <a class="dropdown-item" href="#">CAD</a>
-                        <a class="dropdown-item" href="#">AUD</a>
-                        <a class="dropdown-item" href="#">JPY</a>
-                      </div>
-                      <span class="loandot"></span>
-                    </div>
-                    <hr id="bkrndemphasis">
-                    <h6 class="rw1">Loan Denomination <span>USD</span></h6>
-                    <h6>Loan Duration <span>7 months</span></h6>
-                    <h6>Interest Rate <span>12%</span></h6>
+            <div class="row dash-1 dashcolor">
+              <div class="col-sm-6 loan">
+                <h5 class="emphasis">Loan Amount</h5>
+                <h3> $70,000</h3>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USD</button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">USD</a>
+                    <a class="dropdown-item" href="#">EUR</a>
+                    <a class="dropdown-item" href="#">CAD</a>
+                    <a class="dropdown-item" href="#">AUD</a>
+                    <a class="dropdown-item" href="#">JPY</a>
+                  </div>
+                  <span class="loandot"><i class="fas fa-arrow-right fa-lg arrow" data-fa-transform="right-10 down-8"></i></span>
+                </div>
+                <hr id="bkrndemphasis">
+                <div class="vl"></div>
+                <h6 class="rw1">Loan Denomination <span>USD</span></h6>
+                <h6>Loan Duration <span>7 months</span></h6>
+                <h6>Interest Rate <span>12%</span></h6>
 
+              </div>
+              <div class="col-sm-6 loan">
+                <h5>Collateral Required</h5>
+                <h3>ETH 260</h3>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ETH</button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">ETH</a>
+                    <a class="dropdown-item" href="#">BTC</a>
+                    <a class="dropdown-item" href="#">XRP</a>
+                    <a class="dropdown-item" href="#">BCH</a>
+                    <a class="dropdown-item" href="#">EOS</a>
                   </div>
-                  <div class="col-sm-6 loan">
-                    <h5>Collateral Required</h5>
-                    <h3>ETH 260</h3>
-                    <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ETH</button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">ETH</a>
-                        <a class="dropdown-item" href="#">BTC</a>
-                        <a class="dropdown-item" href="#">XRP</a>
-                        <a class="dropdown-item" href="#">BCH</a>
-                        <a class="dropdown-item" href="#">EOS</a>
-                      </div>
-                    </div>
-                    <hr>
-                    <h6 class="rw1">Loan Amount <span>$70,000</span></h6>
-                    <h6>Interest <span>$2,827</span></h6>
-                    <h6>Total Loan <span>$72,827</span></h6>
-                  </div>
-                  <hr>
+                </div>
+                <hr>
+                <h6 class="rw1">Loan Amount <span>$70,000</span></h6>
+                <h6>Interest <span>$2,827</span></h6>
+                <h6>Total Loan <span>$72,827</span></h6>
+              </div>
+              <hr id="d1break">
             </div>
           </div>
 
           <div class="container">
             <div class="row dash-2">
-                <div class="col-sm-4 dashcolor">
-                  <h6 class="pad2">Principal Repayment</h6>
-                  <h5 class="rw2"> $10,000</h5>
-                  <span class="principaldot"></span>
-                </div>
-                <div class="col-sm-4 dashcolor">
-                  <h6 class="pad2">Interest</h6>
-                  <h5 class="rw2">$464.04</h5>
-                  <span class="principaldot"></span>
-                </div>
-                <div class="col-sm-4 dashcolor">
-                  <h6 class="pad2">Total Repayment</h6>
-                  <h5 class="rw2">$10,464.04</h5>
-                  <span class="principaldot"></span>
-                </div>
+              <div class="col-sm-4 dashcolor">
+                <h6 class="pad2">Principal Repayment</h6>
+                <h5 class="rw2"> $10,000</h5>
+                <span class="principaldot"><i class="far fa-handshake dot fa-lg" data-fa-transform="right-7 down-8"></i></span>
+              </div>
+              <div class="col-sm-4 dashcolor">
+                <h6 class="pad2">Interest</h6>
+                <h5 class="rw2">$464.04</h5>
+                <span class="principaldot"><i class="fas fa-percent dot" data-fa-transform="right-15 down-11"></i></span>
+              </div>
+              <div class="col-sm-4 dashcolor" style="margin-right: 0">
+                <h6 class="pad2">Total Repayment</h6>
+                <h5 class="rw2">$10,464.04</h5>
+                <span class="principaldot"><i class="fas fa-exchange-alt dot fa-lg" data-fa-transform="right-9 down-9"></i></span>
+              </div>
             </div>
           </div>
 
           <div class="container">
             <div class="row dash-3">
-                <div class="col-sm-6 dashcolor">
-                  USD Week Growth
-                </div>
-                <div class="col-sm-6 dashcolor">
-                  ETH Week Growth
-                </div>
+              <div class="col-sm-6 dashcolor" id="fiat" style="margin-right: 1.45%">
+              </div>
+              <div class="col-sm-6 dashcolor" id="crypto">
+              </div>
             </div>
           </div>
-        </div>
-
+          <button type="button" name="Save" class="save">Save</button>
+          <button type="button" name="Next" class="next active">Next</button>
         </div>
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="js\app.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="js\tether.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
 
-<footer></footer>
+  <footer></footer>
 </body>
+
 </html>
