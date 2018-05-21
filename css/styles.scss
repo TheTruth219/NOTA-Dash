@@ -1,10 +1,10 @@
-@import "mixins";
+@import "mixins"; ////variables////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $grey-font: transparentize(lightgrey,.6);
 $menufont: silver;
 $main-background: white;
 $buttonblue: #4ec2ee;
 $green: #26dd80;
-$shadow: 1px 1px 0.5px $grey-font;
+$shadow: 1px 1px 0.5px $grey-font; ////////////Base Styles/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .fa-xs {
   font-size: 0.55em !important;
@@ -14,6 +14,31 @@ $shadow: 1px 1px 0.5px $grey-font;
   height: 7px;
   width: 7px;
 }
+
+.grey {
+  color: #BEBEBE;
+}
+
+.search {
+  padding-right: 5px;
+}
+
+.dot {
+  color: $green;
+}
+
+.nohover {
+  background-color: transparent !important;
+  outline-color: none !important;
+}
+
+%dot2 {
+  height: 45px;
+  width: 45px;
+  border-radius: 60%;
+  display: inline-block;
+}
+///////////////////Side Nav////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .sidemenu {
   background-color: #354052;
@@ -39,10 +64,6 @@ $shadow: 1px 1px 0.5px $grey-font;
 .zero {
   padding-left: 0;
   padding-right: 0;
-}
-
-.mn-c {
-  margin-left: 16.666%;
 }
 
 .button {
@@ -76,7 +97,7 @@ $shadow: 1px 1px 0.5px $grey-font;
   border: none;
   border-color: transparent;
 }
-//top nav
+//Top Nav///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .top-input {
   margin-left: 30px;
@@ -89,14 +110,14 @@ $shadow: 1px 1px 0.5px $grey-font;
   }
 }
 
-.grey {
-  color: #BEBEBE;
-}
-
 .maindash {
   background-color: whitesmoke;
   height: 63rem;
   padding-right: 30px;
+}
+
+.mn-c {
+  margin-left: 16.666%;
 }
 
 .submit-heading {
@@ -105,14 +126,6 @@ $shadow: 1px 1px 0.5px $grey-font;
 
 .user-tools {
   float: right;
-}
-
-.search {
-  padding-right: 5px;
-}
-
-.dot {
-  color: $green;
 }
 
 .bar {
@@ -124,11 +137,6 @@ $shadow: 1px 1px 0.5px $grey-font;
   width: 32px;
   border-radius: 50%;
   vertical-align: middle;
-}
-
-.nohover {
-  background-color: transparent !important;
-  outline-color: none !important;
 }
 
 .profilebutton {
@@ -169,14 +177,7 @@ $shadow: 1px 1px 0.5px $grey-font;
     }
   }
 }
-//Dashboard Layout
-
-%dot2 {
-  height: 45px;
-  width: 45px;
-  border-radius: 60%;
-  display: inline-block;
-}
+//Dashboard Layout/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .loandot {
   @extend %dot2;
@@ -208,11 +209,13 @@ $shadow: 1px 1px 0.5px $grey-font;
 .dashcolor {
   background-color: $main-background;
 }
+/////////Dash Row 1/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .dash-1 {
-  height: 21em;
+  // height: 21em;
   flex-direction: row;
   box-shadow: $shadow;
+  overflow: hidden;
 
   hr {
     border: 0.5px solid rgba(0,0,0,0.1);
@@ -221,22 +224,26 @@ $shadow: 1px 1px 0.5px $grey-font;
 }
 
 #d1break {
-  width: 100%;
+  width: 211%;
   height: 1px;
   border: none;
   background-color: $grey-font;
+  position: absolute;
+  top: 54%;
+  left: -3%;
 }
 
 .vl {
   border-left: 1px solid $grey-font;
-  height: 91%;
+  height: 35%;
   position: absolute;
   right: -1.5%;
-  top: 109%;
+  top: 65%;
 }
 
 .loan {
-  height: 50%;
+  padding-bottom: 2em;
+  padding-top: 2em;
 
   h5 {
     margin-top: 3em;
@@ -312,7 +319,7 @@ h6 {
     color: black;
   }
 }
-//Second Dash Row
+//Second Dash Row//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .dash-2 {
   margin-top: 1em;
@@ -334,7 +341,7 @@ h6 {
 .pad2 {
   padding-top: 2em;
 }
-//Third Dash row
+//Third Dash Row///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #crypto,
 #fiat {
@@ -376,7 +383,13 @@ h6 {
   color: white;
   background-color: $buttonblue;
 }
-/////media queries///
+/////Media Queries//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@media(max-width: 544px) {
+  #d1break,
+  .loandot {
+    display: none;
+  }
+}
 @media(min-width: 544px) {
   .col-sm-4 {
     max-width: 32.333333%;
