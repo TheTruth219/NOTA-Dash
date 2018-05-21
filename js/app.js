@@ -25,8 +25,6 @@ xhttp.onreadystatechange = function() {
     fiatPrice6 = prices.Data[6].close;
 
 
-    // console.log(cryptPrice0);
-
 
   }
 };
