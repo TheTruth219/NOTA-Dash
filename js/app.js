@@ -1,32 +1,38 @@
 const graph1 = document.getElementById("fiat");
 const graph2 = document.getElementById("crypto");
 const xhttp = new XMLHttpRequest();
-const cryptoAPI = "https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=USD&limit=7";
-const fiatAPI = "https://min-api.cryptocompare.com/data/histoday?fsym=USD&tsym=EUR&limit=7";
+const cryptoAPI = "https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=USD&limit=6";
+const fiatAPI = "https://min-api.cryptocompare.com/data/histoday?fsym=USD&tsym=EUR&limit=6";
 const crytpo = ""; //Future connection with button select dropdown
 
-let fiatPrice0 = " ";
-let fiatPrice1 = " ";
-let fiatPrice2 = " ";
-let fiatPrice3 = " "
-let fiatPrice4 = " ";
-let fiatPrice5 = " ";
-let fiatPrice6 = " ";
+var fiatPrice0 = " ";
+ fiatPrice1 = " ";
+ fiatPrice2 = " ";
+ fiatPrice3 = " "
+ fiatPrice4 = " ";
+ fiatPrice5 = " ";
+ fiatPrice6 = " ";
+ fCeiling = "";
+ fFloor = "";
 
 xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
-    let prices = JSON.parse(xhttp.responseText);
-    fiatPrice0 = prices.Data[0].close;
-    fiatPrice1 = prices.Data[1].close;
-    fiatPrice2 = prices.Data[2].close;
-    fiatPrice3 = prices.Data[3].close;
-    fiatPrice4 = prices.Data[4].close;
-    fiatPrice5 = prices.Data[5].close;
-    fiatPrice6 = prices.Data[6].close;
+    let fPrices = JSON.parse(xhttp.responseText);
+    fiatPrice0 = fPrices.Data[0].close;
+    fiatPrice1 = fPrices.Data[1].close;
+    fiatPrice2 = fPrices.Data[2].close;
+    fiatPrice3 = fPrices.Data[3].close;
+    fiatPrice4 = fPrices.Data[4].close;
+    fiatPrice5 = fPrices.Data[5].close;
+    fiatPrice6 = fPrices.Data[6].close;
 
+    fCeiling = (fiatPrice0+fiatPrice1+fiatPrice2+fiatPrice3+fiatPrice4+fiatPrice5+fiatPrice6)/fPrices.Data.length;
 
-
+    fCeiling = (fCeiling*.2)+fCeiling;
+    fFloor = fCeiling-(fCeiling*.2);
+    console.log(fCeiling);
   }
+  
 };
 xhttp.open("GET", fiatAPI, false);
 xhttp.send();
@@ -61,8 +67,8 @@ Highcharts.chart(graph1, {
     }]
   },
   yAxis: {
-    floor:.80,
-    ceiling: .9,
+    floor: fFloor,
+    ceiling: fCeiling,
     title: {
       text: 'Price'
     }
@@ -111,21 +117,24 @@ let cryptPrice3 = " "
 let cryptPrice4 = " ";
 let cryptPrice5 = " ";
 let cryptPrice6 = " ";
-
+var cCeiling = "";
+let cFloor = "";
 xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
+    
     let prices = JSON.parse(xhttp.responseText);
+    cryptPrice0 = prices.Data[0].close;
     cryptPrice1 = prices.Data[1].close;
     cryptPrice2 = prices.Data[2].close;
     cryptPrice3 = prices.Data[3].close;
     cryptPrice4 = prices.Data[4].close;
     cryptPrice5 = prices.Data[5].close;
-    cryptPrice6 = prices.Data[6].close;
-    cryptPrice0 = prices.Data[0].close;
+    cryptPrice6 = prices.Data[6].close;  
+    
+    cCeiling = (cryptPrice0+cryptPrice1+cryptPrice2+cryptPrice3+cryptPrice4+cryptPrice5+cryptPrice6)/prices.Data.length;
 
-    // console.log(cryptPrice0);
-
-
+    cCeiling = (cCeiling*.2)+cCeiling;
+    cFloor = cCeiling-(cCeiling*.2);
   }
 };
 xhttp.open("GET", cryptoAPI, false);
@@ -160,8 +169,8 @@ Highcharts.chart(graph2, {
     }]
   },
   yAxis: {
-    floor: 600,
-    ceiling: 780,
+    floor:cFloor,
+    ceiling: cCeiling,
     title: {
       text: 'Price'
     }
